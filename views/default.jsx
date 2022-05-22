@@ -28,7 +28,7 @@ function Def(html) {
             </body>
             <div id='footer'>
                 <p id='footer_text'>
-                    Created by: Patrick Bowes{' '}
+                    Created by: Patrick Bowes {' '}
                     <a target='_blank' rel='noopener noreferrer' href='https://github.com/bowespa'>
                         <img id='github' alt='GitHub' src='../images/github.png' />
                     </a>
