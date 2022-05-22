@@ -4,17 +4,20 @@ const Def = require('./default')
 function home() {
     return (
         <Def>
-            <main>
+            <main className='my-2'>
                 <h1>REST-Rant</h1>
                 <div>
-                    <img src='/images/chia-fruit-drink.jpg' alt='Chia Fruit Drink' />
+                    <img
+                        className='rest-main img-fluid img-center'
+                        src='/images/homepage_pic.jpg'
+                        alt='Homepage Picture'
+                    />
                     <div>
-                        Photo by <a href='https://unsplash.com/@cravethebenefits'>Brenda Godinez</a> on <a href='https://unsplash.com/'> Unsplash </a>
+                        <p className='photoCred'>
+                            Photo by <a href='https://unsplash.com/@louishansel'>Louis Hansel</a> on <a href='https://unsplash.com/'> Unsplash </a>
+                        </p>
                     </div>
                 </div>
-                <a href='/places'>
-                    <button className='btn-primary'>Places Page</button>
-                </a>
             </main>
         </Def>
     )

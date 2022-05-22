@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
         .then((places) => {
             res.render('places/index', { places })
         })
-        .catch(err => {
+        .catch((err) => {
             console.log(err)
             res.render('error404')
         })
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
         .then(() => {
             res.redirect('/places')
         })
-        .catch(err => {
+        .catch((err) => {
             console.log('err', err)
             res.render('error404')
         })
@@ -36,11 +36,11 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
         .populate('comments')
-        .then(place => {
+        .then((place) => {
             console.log(place.comments)
             res.render('places/show', { place })
         })
-        .catch(err => {
+        .catch((err) => {
             console.log('err', err)
             res.render('error404')
         })
@@ -48,21 +48,22 @@ router.get('/:id', (req, res) => {
 
 router.post('/:id/comment', (req, res) => {
     console.log(req.body)
+    req.body.rant = req.body.rant ? true : false;
     db.Place.findById(req.params.id)
-        .then(place => {
+        .then((place) => {
             db.Comment.create(req.body)
-                .then(comment => {
+                .then((comment) => {
                     place.comments.push(comment.id)
                     place.save()
                         .then(() => {
                             res.redirect(`/places/${req.params.id}`)
                         })
                 })
-                .catch(err => {
+                .catch((err) => {
                     res.render('error404')
                 })
         })
-        .catch(err => {
+        .catch((err) => {
             res.render('error404')
         })
 })
@@ -73,7 +74,7 @@ router.put('/:id', (req, res) => {
         .then(() => {
             res.redirect(`/places/${req.params.id}`)
         })
-        .catch(err => {
+        .catch((err) => {
             console.log('err', err)
             res.render('error404')
         })
@@ -82,10 +83,10 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     db.Place.findByIdAndDelete(req.params.id)
-        .then(place => {
+        .then((place) => {
             res.redirect('/places')
         })
-        .catch(err => {
+        .catch((err) => {
             console.log('err', err)
             res.render('error404')
         })
@@ -93,10 +94,10 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
     db.Place.findById(req.params.id)
-        .then(place => {
+        .then((place) => {
             res.render('places/edit', { place })
         })
-        .catch(err => {
+        .catch((err) => {
             res.render('error404')
         })
 })
@@ -107,7 +108,7 @@ router.delete('/:id/comment/:commentId', (req, res) => {
             console.log('Success')
             res.redirect(`/places/${req.params.id}`)
         })
-        .catch(err => {
+        .catch((err) => {
             console.log('err', err)
             res.render('error404')
         })

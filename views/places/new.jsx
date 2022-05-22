@@ -4,7 +4,7 @@ const Def = require('../default')
 function new_form() {
     return (
         <Def>
-            <main>
+            <main className='my-2'>
                 <h1>Add a New Place</h1>
                 <form method="POST" action="/places">
                     <div className="row">
@@ -17,7 +17,7 @@ function new_form() {
                                 required />
                         </div>
                         <div className="form-group col-sm-6">
-                            <label htmlFor="pic">Place Picture</label>
+                            <label htmlFor="pic">Place Picture URL</label>
                             <input
                                 className="form-control"
                                 id="pic"
@@ -58,7 +58,10 @@ function new_form() {
                             required />
                     </div>
                     <br></br>
-                    <input className="btn btn-primary" type="submit" value="Add Place" />
+                    <input
+                        className="btn btn-primary"
+                        type="submit"
+                        value="Add Place" />
                 </form>
             </main>
         </Def>

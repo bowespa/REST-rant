@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: lightblue;
+  background-color: #81C3D7;
   text-align: center;
 }
 
@@ -12,15 +18,19 @@ main {
 
 h1 {
     text-align: center;
-    color: cornflowerblue;
+    color: #2F6690;
+    font-family: 'DM Serif Display', serif;
   }
 
+
 img {
-  height: 20em;
+  width: 500px;
+  border-radius: 20px;
+  text-align: center;
 }
 
 nav {
-  background-color: cornflowerblue;
+  background-color: #3A7CA5;
   padding: 10px;
 }
 
@@ -40,7 +50,7 @@ nav a {
 }
 
 nav a:hover {
-  color: lightblue;
+  color: cornflowerblue;
   text-decoration: none;
 }
 
@@ -54,5 +64,27 @@ form {
 
 .border {
   border: 1px solid gray;
+}
+
+#github {
+  width: 60px;
+  height: auto;
+  vertical-align: middle;
+}
+
+#footer-text {
+  font-size: 0.75em;
+}
+
+#footer {
+  font-family:'Righteous', cursive; 
+}
+
+.photoCred {
+  font-size: 0.7em;
+}
+
+.img-resize {
+  height: 300px;
 }
 
